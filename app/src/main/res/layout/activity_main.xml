@@ -1,18 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/main_bar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:background="@color/main_blue"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_action_search" />
+
+            <ImageView
+                android:id="@+id/iv_all_menu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_action_format_list_bulleted" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_banner"
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:background="#CDDC39"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="배너 들어갈 곳"
+                android:textSize="40dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/main_blue" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/main_items_iv1_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/main_items_iv3_layout"
+                app:layout_constraintEnd_toStartOf="@+id/main_items_iv2_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/main_items_game_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_items_iv2_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/main_items_iv4_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/main_items_iv1_layout"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/main_items_education_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_items_iv3_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/main_items_iv4_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_items_iv1_layout">
+
+                <ImageView
+                    android:id="@+id/main_items_util_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_items_iv4_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/main_items_iv3_layout"
+                app:layout_constraintTop_toBottomOf="@id/main_items_iv2_layout">
+
+                <ImageView
+                    android:id="@+id/main_items_all_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/main_items_game_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="100dp"
+                    android:layout_toStartOf="@+id/main_items_education_prog"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:id="@+id/main_items_education_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:id="@+id/main_items_util_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:id="@+id/main_items_all_prog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@mipmap/ic_launcher" />
+
+
+            </RelativeLayout>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홈 ICO" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이템 저장 ICO" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_mypage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MyPage ICO" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </LinearLayout>
+
+</layout>
