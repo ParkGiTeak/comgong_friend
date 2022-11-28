@@ -10,161 +10,19 @@
         android:orientation="vertical"
         tools:context=".ui.activity.MainActivity">
 
-        <LinearLayout
-            android:id="@+id/main_bar"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:background="@color/main_blue"
-            android:gravity="center_vertical|right"
-            android:orientation="horizontal"
-            android:paddingRight="20dp">
-
-            <ImageView
-                android:id="@+id/iv_search"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_action_search" />
-
-            <ImageView
-                android:id="@+id/iv_all_menu"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_action_format_list_bulleted" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:id="@+id/main_banner"
-            android:layout_width="match_parent"
-            android:layout_height="219dp"
-            android:background="@drawable/layout_round"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="배너 들어갈 곳"
-                android:gravity="center"
-                android:textSize="40dp" />
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main_items"
+        <FrameLayout
+            android:id="@+id/main_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/layout_round"
-            android:orientation="vertical">
+            android:layout_weight="1"/>
 
-            <LinearLayout
-                android:id="@+id/main_items_iv1_layout"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@+id/main_items_iv3_layout"
-                app:layout_constraintEnd_toStartOf="@+id/main_items_iv2_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/main_items_game_prog"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/ic_launcher" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_items_iv2_layout"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/main_items_iv4_layout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/main_items_iv1_layout"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/main_items_education_prog"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/ic_launcher" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_items_iv3_layout"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/main_items_iv4_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/main_items_iv1_layout">
-
-                <ImageView
-                    android:id="@+id/main_items_util_prog"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/ic_launcher" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_items_iv4_layout"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/main_items_iv3_layout"
-                app:layout_constraintTop_toBottomOf="@id/main_items_iv2_layout">
-
-                <ImageView
-                    android:id="@+id/main_items_all_prog"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/ic_launcher" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/main_tab_layout"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/main_bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:tabGravity="fill"
-            app:tabRippleColor="@android:color/transparent"
-            app:tabIndicatorHeight="0dp">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_item_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈 ICO" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_item_saved"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아이템 저장 ICO" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_item_mypage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MyPage ICO" />
-
-        </com.google.android.material.tabs.TabLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemBackground="@color/white" />
 
     </LinearLayout>
 

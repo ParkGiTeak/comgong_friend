@@ -56,7 +56,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.44"
 
     // LiveData
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 
     // ViewModel
     def lifecycle_version = "2.4.0"
@@ -73,6 +73,10 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    /* ViewPager2 */
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
 
 }
 
