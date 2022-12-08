@@ -2,19 +2,12 @@ package com.example.comgongfriend.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import com.example.comgongfriend.R
 import com.example.comgongfriend.databinding.ActivityMainBinding
-import com.example.comgongfriend.databinding.FragmentMainBinding
 import com.example.comgongfriend.ui.fragment.MainFragment
 import com.example.comgongfriend.ui.fragment.MyPageFragment
 import com.example.comgongfriend.ui.fragment.SavedPageFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(){
 
